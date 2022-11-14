@@ -1,12 +1,24 @@
 <div id="pdf_to_img" class="tab-pane fade">
-	<form>
-		<label for="file" class="form-label">Range of pages (n-m starting from 0, empty for all pages):</label>
-		<input type="text" name="range" class="form-control"><br>
-		<button id="pdf_to_img" type="submit" name="pdf_to_img" class="d btn btn-dark" value="d">Convert to IMG</button>     
+	<div class="heading section">
+		<h2>Converti PDF in immagine</h2>
+		<p class="lead"> Esegui la conversione delle pagine di un PDF in immagini JPG secondo l'intervallo impostato. La conversione riguarderà l'ultimo file caricato.</p>
+	</div>
+
+	<form class="col-lg-6">
+		<div class="form-group">
+			<label for="file" class="form-label">Inserisci l'intervallo di pagine</label>
+			<input type="text" name="range" class="form-control" placeholder="Seperai numero no il trattino (es. 0-5)">
+			<small class="form-text text-muted">
+				L'intervallo inizia con la pagina 0 (es. 0-5 esegue la conversione dalla pagina 1 alla pagina 6). Lascia vuoto per eseguire la conversione di tutte le pagine.
+			</small>
+		</div>
+
+		<div class="mt-4">
+			<button id="pdf_to_img" type="submit" name="pdf_to_img" class="d btn btn-sm btn-success" value="d">Converti in immagine</button>
+		</div>
 	</form>
 <?bash
 if [ "$pdf_to_img" = "d" ]; then
-	echo "Convert..."
 	cd $path/
 	output=$(tail -1 list | grep -o -P "(?<=[0-9]\. ).*pdf")
 	output=$(echo $output | sed --expression='s/[^a-zA-Z0-9]/_/g')
@@ -18,9 +30,12 @@ if [ "$pdf_to_img" = "d" ]; then
 		convert -density 600 -colorspace RGB $input[$range] $output.jpg
 	fi
 	tar zcvf $output.tar.gz $output*
-	echo "Convert ok. <br>"
-	echo "<a href="$subpath/$output.tar.gz" class="btn btn-success" download>Download converted img.</a>"
+	echo "
+		<div class='section'>
+			<a href='$subpath/$output.tar.gz' class='text-decoration-none' download>Clicca qui per scaricare il PDF.</a>
+		</div>
+	"
 fi
 ?>
-        
+
 </div>

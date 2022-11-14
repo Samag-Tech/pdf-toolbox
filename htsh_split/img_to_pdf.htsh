@@ -1,15 +1,22 @@
 <div id="img_to_pdf" class="tab-pane fade">
-	<form id="choice" name='form' method="POST" action="/">
-		<button id="img_to_pdf" type="submit" name="img_to_pdf" class="b btn btn-dark" value="b">Convert to PDF</button>     
+	<div class="heading section">
+		<h2>Converti un'immagine in PDF</h2>
+		<p class="lead">Esegui la conversione di un'immagine di PDF. La conversione riguarderà l'ultimo file caricato.</p>
+	</div>
+
+	<form id="choice" name='form' method="POST" action="/" class="col-lg-6">
+		<button id="img_to_pdf" type="submit" name="img_to_pdf" class="b btn btn-sm btn-success" value="b">Converti in PDF</button>
 	</form>
 <?bash
 
 if [ "$img_to_pdf" = "b" ]; then
-echo "Convert..."
 	cd $path/
 	convert -strip $(ls -1 *.) convert.pdf > /dev/null 2>&1
-	echo "Convert ok. <br>"
-	echo "<a href="$subpath/convert.pdf" class="btn btn-success" download>Download converted pdf.</a>"
+	echo "
+		<div class='section'>
+			<a href='$subpath/convert.pdf' class='text-decoration-none' download>Clicca qui per scaricare il PDF.</a>
+		</div>
+	"
 fi
 ?>
 

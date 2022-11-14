@@ -1,29 +1,39 @@
 <div id="workspace" class="tab-pane fade show active">
-	<form id="choice" name='form' method="POST" action="/">
-		<button id="a" type="submit" name="vote" class="a btn btn-dark" value="a">Delete all files</button>     
-	</form>
+	<div class="heading section">
+		<h2>Scrivania</h2>
+		<p class="lead">Carica i file, uno per volta, prima di eseguire una della operazioni elecante nel menu.</p>
+	</div>
+
+	<div class="section col-lg-6">
+		<form id="choice" name='form' method="POST" action="/">
+			<button id="a" type="submit" name="vote" class="a btn btn-sm btn-danger" value="a">
+				Cancella i files caricati
+			</button>
+		</form>
+	</div>
 
 <?bash
 if [ "$vote" = "a" ]; then
-	echo "Delete..."
-	rm $path/*
-	echo "Deletion ok."
+echo ""
+rm $path/*
+echo "Cancellazione eseguita."
 fi
 ?>
-	<form method="post" enctype="multipart/form-data">
-		<label for="file" class="form-label">Filename:</label>
-		<input type="file" name="file" id="file" class="form-control"><br>
-		<input type="submit" name="submit" value="Submit" class="btn btn-dark">
-	</form>
+
+
+    <div class="section col-lg-6">
+		<form method="post" enctype="multipart/form-data">
+			<input type="file" name="file" id="file" class="form-control">
+				<br>
+			<input type="submit" name="submit" value="Carica files" class="btn btn-sm btn-success">
+		</form>
+	</div>
 
 <?bash
 read && read disposition && read ctype && read
 size=$((CONTENT_LENGTH-a))
-
 eval `echo "${disposition}"|sed 's/\r$//'|cut -d';' -f3`
-
 dd ibs=1 obs=512 count=$size of="$path/$filename"
-
 if [ -f "$path/$filename" ]
 then
 	filenum=$(($(ls -1 $path/*. | wc -l) + 1)).

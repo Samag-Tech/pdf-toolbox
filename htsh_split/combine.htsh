@@ -1,15 +1,22 @@
 <div id="combine" class="tab-pane fade">
+	<div class="heading section">
+		<h2>Unisci PDF</h2>
+		<p class="lead">Unisci i PDF caricati in un unico file.</p>
+	</div>
+
 	<form id="choice" name='form' method="POST" action="/">
-		<button id="b" type="submit" name="combine" class="b btn btn-dark" value="b">Combine all files</button>     
+		<button id="b" type="submit" name="combine" class="b btn btn-sm btn-success" value="b">Unisci i file</button>
 	</form>
 <?bash
 
 if [ "$combine" = "b" ]; then
-echo "Combine..."
 	cd $path/
 	gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combine.pdf -dBATCH $(ls -1 *.) > /dev/null 2>&1
-	echo "Combine ok. <br>"
-	echo "<a href="$subpath/combine.pdf" class="btn btn-success" download>Download combined pdf.</a>"
+	echo "
+		<div class='section'>
+			<a href='$subpath/combine.pdf' class='text-decoration-none' download>Clicca qui per scaricare il PDF.</a>
+		</div>
+	"
 fi
 ?>
 

@@ -2,10 +2,13 @@ version: "3.4"
 services:
   web-pdf-toolbox:
     container_name: web-pdf-toolbox
-    image: zpex/web-pdf-toolbox:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       - TZ=Europe/Paris
     ports:
       - 25568:80
     volumes:
+        - ./html/:/var/www/ciccio/
         - ./pdf/:/tmp/pdf/

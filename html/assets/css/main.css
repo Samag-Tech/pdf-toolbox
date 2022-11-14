@@ -1,0 +1,46 @@
+body {
+    font-size: 14px;
+}
+
+.section {
+    padding: 1rem 0rem;
+}
+
+/**
+ *
+ * Header
+ *
+ */
+.nav-link {
+    color: var(--bs-gray);
+}
+
+.nav-link.active {
+    color: var(--bs-orange);
+}
+
+.dropdown-item.active .nav-link.active {
+    color: #fff);
+}
+
+.nav-item:first-child .nav-link {
+    padding-left: 0;
+}
+
+.nav-item:last-child .nav-link {
+    padding-right: 0;
+}
+
+/**
+ *
+ * Button
+ *
+ */
+.btn {
+    border-radius: 0
+}
+
+.btn-primary {
+    background-color: var(--bs-orange);
+    border-color: var(--bs-orange);
+}
