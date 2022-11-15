@@ -3,61 +3,52 @@
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img src="/assets/images/logo.png" class="d-inline-block align-top" height="30">
-                    <small class="app-name text-muted ms-2">Strumenti PDF</small>
-                </a>
+            </a>
 
-                <ul class="nav justify-content-end" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a href="#workspace" class="nav-link active" data-toggle="tab">Scrivania</a>
-                    </li>
+            <ul class="nav justify-content-end" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a href="#workspace" class="nav-link active" data-toggle="tab">Scrivania</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a href="#compress" class="nav-link" data-toggle="tab">Comprimi PDF</a>
-                    </li>
+                <li class="nav-item">
+                    <a href="#compress" class="nav-link" data-toggle="tab">Comprimi PDF</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a href="#combine" class="nav-link" data-toggle="tab">Unisci PDF</a>
-                    </li>
+                <li class="nav-item">
+                    <a href="#combine" class="nav-link" data-toggle="tab">Unisci PDF</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a href="#split" class="nav-link" data-toggle="tab">Dividi PDF</a>
-                    </li>
+                <li class="nav-item">
+                    <a href="#split" class="nav-link" data-toggle="tab">Dividi PDF</a>
+                </li>
 
-					<li class="nav-item dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							data-toggle="dropdown"
-							href="#"
-							role="button"
-							aria-expanded="false"
-						>
-							Converti PDF
-						</a>
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        href="#"
+                        role="button"
+                        aria-expanded="false"
+                    >
+                        Converti PDF
+                    </a>
 
-						<div class="dropdown-menu">
-							<a
-								class="dropdown-item nav-link"
-								data-toggle="tab"
-								href="#img_to_pdf"
-							>
-								Immagine in PDF
-							</a>
-							<a
-								class="dropdown-item nav-link"
-								data-toggle="tab"
-								href="#pdf_to_img"
-							>
-								PDF in Immagine
-							</a>
-						</div>
-					</li>
-                    <!-- <li class="nav-item">
-                        <a href="#img_to_pdf" class="nav-link" data-toggle="tab">Converti immagine in PDF</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#pdf_to_img" class="nav-link" data-toggle="tab">Converti PDF in immagine</a>
-                    </li> -->
+                    <div class="dropdown-menu">
+                        <a
+                            class="dropdown-item nav-link"
+                            data-toggle="tab"
+                            href="#img_to_pdf"
+                        >
+                            Immagine in PDF
+                        </a>
+                        <a
+                            class="dropdown-item nav-link"
+                            data-toggle="tab"
+                            href="#pdf_to_img"
+                        >
+                            PDF in Immagine
+                        </a>
+                    </div>
                 </li>
             </ul>
         </div>

@@ -11,6 +11,11 @@ body {
  * Header
  *
  */
+.app-name {
+    color: #aaa;
+    font-size: 14px;
+}
+
 .nav-link {
     color: var(--bs-gray);
 }

@@ -2,9 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>PDF Toolbox</title>
+        <title>Strumenti PDF ~ Servizi Digital</title>
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/main.css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="assets/images/favicon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
